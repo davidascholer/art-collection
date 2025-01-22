@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 // import SharedAuthLayout from "./pages/auth/SharedLayout";
 import Sidebar from "./pages/Sidebar";
 import Settings from "./pages/Settings";
-import paths from "@/features/router/paths";
+import paths from "./paths";
 import QueryDetail from "./pages/QueryDetail";
 
 function Routes() {

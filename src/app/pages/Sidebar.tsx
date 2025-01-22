@@ -1,7 +1,7 @@
 import { Home as HomeIcon, Search, Settings, LogIn } from "lucide-react";
 import { Outlet } from "react-router";
 
-import paths from "@/features/router/paths";
+import paths from "../paths";
 import { AppSidebar } from "@/ui/components/sidebar/AppSidebar";
 import { SidebarContentType } from "@/ui/components/sidebar/utils/types";
 
