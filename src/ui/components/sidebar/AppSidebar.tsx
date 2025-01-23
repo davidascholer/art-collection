@@ -46,7 +46,7 @@ export const AppSidebar = ({
         </SidebarContent>
       </Sidebar>
       <main className="w-full h-full">
-        <SidebarTrigger className="relative" />
+        <SidebarTrigger className="absolute" />
         {children}
       </main>
     </SidebarProvider>
