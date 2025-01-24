@@ -1,4 +1,5 @@
 import { Routes as AppRoutes, Route } from "react-router";
+
 import Home from "./pages/Home";
 import QueryList from "./pages/QueryList";
 import SignUp from "./pages/auth/SignUp";
@@ -7,15 +8,15 @@ import SignOut from "./pages/auth/SignOut";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import NotFound from "./pages/NotFound";
 // import SharedAuthLayout from "./pages/auth/SharedLayout";
-import Sidebar from "./pages/Sidebar";
 import Settings from "./pages/Settings";
 import paths from "./paths";
 import QueryDetail from "./pages/QueryDetail";
+import { AppSidebar } from "./app-sidebar/AppSidebar";
 
 function Routes() {
   return (
     <AppRoutes>
-      <Route element={<Sidebar />}>
+      <Route element={<AppSidebar />}>
         <Route index element={<Home />} />
         
         <Route path={paths.query}>

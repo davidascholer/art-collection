@@ -8,13 +8,13 @@ import {
   Search,
   Settings,
 } from "lucide-react";
-import { SidebarContentType } from "./utils/types";
 import {
   within,
   expect,
   waitFor,
 } from "@storybook/test";
 import "@/index.css";
+import { SidebarContentType } from "@/ui/components/sidebar/utils/types";
 
 // Menu items.
 const items: SidebarContentType[] = [

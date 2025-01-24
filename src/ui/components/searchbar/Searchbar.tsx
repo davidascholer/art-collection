@@ -1,11 +1,11 @@
 import React from "react";
 
-interface SearchbarProps {
-  placeholder?: string;
-  onSearch: (query: string) => void;
-}
+// interface SearchbarProps {
+//   placeholder?: string;
+//   onSearch: (query: string) => void;
+// }
 
-const Searchbar: React.FC<SearchbarProps> = () => {
+const Searchbar = () => {
 // const Searchbar: React.FC<SearchbarProps> = ({
 //   placeholder = "Search...",
 //   onSearch,
