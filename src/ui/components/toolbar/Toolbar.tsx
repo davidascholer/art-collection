@@ -7,6 +7,7 @@ import { cn } from "../../lib/utils";
 import { Avatar, AvatarImage, AvatarFallback } from "../avatar/Avatar";
 import { User } from "lucide-react";
 import { NotificationBadge } from "../notification/NotificationBadge";
+import Searchbar from "../searchbar/Searchbar";
 
 const Toolbar = React.forwardRef<
   React.ComponentRef<typeof ToolbarPrimitive.Root>,
@@ -69,7 +70,7 @@ const ToolbarBadge = React.forwardRef<
     count?: number;
     iconSize?: number;
   }
->(({ count = 0, iconSize = 36, className, ...props }) => (
+>(({ count = 0, iconSize = 24, className, ...props }) => (
   <ToolbarPrimitive.Link
     className={cn(
       "relative flex p-2 bg-none hover:bg-accent items-center rounded-full outline-none focus:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
@@ -81,6 +82,14 @@ const ToolbarBadge = React.forwardRef<
   </ToolbarPrimitive.Link>
 ));
 ToolbarBadge.displayName = ToolbarPrimitive.Link.displayName;
+
+const ToolbarSearchbar: React.FC<{
+  menuItems: string[];
+  className?: string;
+}> = ({ className, menuItems }) => {
+  return <Searchbar  className={className} menuItems={menuItems}/>;
+};
+ToolbarSearchbar.displayName = "ToolbarSearchbar";
 
 const ToolbarAvatar = React.forwardRef<
   React.ComponentRef<typeof ToolbarPrimitive.Link>,
@@ -105,18 +114,28 @@ const ToolbarAvatar = React.forwardRef<
     </Avatar>
   </ToolbarPrimitive.Link>
 ));
-ToolbarAvatar.displayName = ToolbarPrimitive.Link.displayName;
+ToolbarAvatar.displayName = "ToolbarAvatar";
 
-const ToolbarGroup: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="flex flex-row items-center justify-between gap-5">
+const ToolbarGroup: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+}> = ({ children, className }) => (
+  <div
+    className={cn(
+      "flex flex-row items-center justify-between gap-5",
+      className
+    )}
+  >
     {children}
   </div>
 );
+ToolbarGroup.displayName = "ToolbarGroup";
 
 export {
   Toolbar,
   ToolbarButton,
   ToolbarIcon,
+  ToolbarSearchbar,
   ToolbarAvatar,
   ToolbarBadge,
   ToolbarGroup,

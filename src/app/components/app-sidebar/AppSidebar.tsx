@@ -13,9 +13,12 @@ import { SidebarMenuButton } from "@/ui/components/sidebar/components/SidebarMen
 import { SidebarMenu } from "@/ui/components/sidebar/components/SidebarMenu";
 import SidebarProvider from "@/ui/components/sidebar/SidebarProvider";
 import SidebarTrigger from "@/ui/components/sidebar/SidebarTrigger";
-import { SidebarContentType, SidebarType } from "@/ui/components/sidebar/utils/types";
-import { AppToolbar } from "@/app/app-toolbar/AppToolbar";
-import paths from "../paths";
+import {
+  SidebarContentType,
+  SidebarType,
+} from "@/ui/components/sidebar/utils/types";
+import { AppToolbar } from "@/app/components/app-toolbar/AppToolbar";
+import paths from "../../paths";
 
 // Menu items.
 const items: SidebarContentType[] = [
@@ -41,6 +44,8 @@ const items: SidebarContentType[] = [
   },
 ];
 
+const menuItems = ["one", "two", "three", "four", "five"];
+
 export const AppSidebar = ({
   side = "left",
   variant = "sidebar",
@@ -52,7 +57,7 @@ export const AppSidebar = ({
         side={side}
         variant={variant}
         collapsible={collapsible}
-        className={"border-none mt-14"}
+        className="border-none mt-16"
       >
         <SidebarContent>
           <SidebarGroup>
@@ -61,7 +66,7 @@ export const AppSidebar = ({
               <SidebarMenu>
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
+                    <SidebarMenuButton asChild className="size-lg">
                       <a href={item.url}>
                         {item.icon ? <item.icon /> : null}
                         <span>{item.title}</span>
@@ -74,8 +79,14 @@ export const AppSidebar = ({
           </SidebarGroup>
         </SidebarContent>
       </Sidebar>
-      <AppToolbar sidbarTrigger={<SidebarTrigger />} />  
-      <main className="w-full mt-14 overflow-hidden"><Outlet /></main>
+      <AppToolbar
+        sidbarTrigger={<SidebarTrigger className="mr-6" />}
+        menuItems={menuItems}
+        className="h-16"
+      />
+      <main className="w-full overflow-hidden mt-16">
+        <Outlet />
+      </main>
     </SidebarProvider>
   );
 };

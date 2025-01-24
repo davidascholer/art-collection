@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 import Settings from "./pages/Settings";
 import paths from "./paths";
 import QueryDetail from "./pages/QueryDetail";
-import { AppSidebar } from "./app-sidebar/AppSidebar";
+import { AppSidebar } from "./components/app-sidebar/AppSidebar";
 
 function Routes() {
   return (

@@ -18,6 +18,7 @@ export type SidebarType = {
   side?: "left" | "right";
   variant?: "sidebar" | "floating" | "inset";
   collapsible?: "offcanvas" | "icon" | "none";
+  toolbarHeight?: number
 };
 
 export type SidebarContentType = {

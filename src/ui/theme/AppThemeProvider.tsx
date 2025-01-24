@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/theme/ThemeProvider";
+import { ThemeProvider } from "./ThemeProvider";
 
 import { ReactNode } from "react";
 
