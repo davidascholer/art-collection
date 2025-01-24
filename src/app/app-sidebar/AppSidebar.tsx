@@ -45,18 +45,14 @@ export const AppSidebar = ({
   side = "left",
   variant = "sidebar",
   collapsible = "offcanvas",
-  className,
-}: {
-  variant?: SidebarType["variant"];
-  className?: string;
-} & SidebarType) => {
+}: SidebarType) => {
   return (
     <SidebarProvider>
       <Sidebar
         side={side}
         variant={variant}
         collapsible={collapsible}
-        className={className}
+        className={"border-none mt-14"}
       >
         <SidebarContent>
           <SidebarGroup>
@@ -79,7 +75,7 @@ export const AppSidebar = ({
         </SidebarContent>
       </Sidebar>
       <AppToolbar sidbarTrigger={<SidebarTrigger />} />  
-      <main className="w-full mt-14 overflow-hidden bg-green-600"><Outlet /></main>
+      <main className="w-full mt-14 overflow-hidden"><Outlet /></main>
     </SidebarProvider>
   );
 };
