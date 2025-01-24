@@ -49,35 +49,37 @@ const Searchbar: React.FC<SearchbarProps> = ({
   return (
     <form className={cn("max-w-lg mx-auto", className)}>
       <div className="flex h-10 items-stretch  bg-accent rounded-xl">
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            data-dropdown-toggle="dropdown"
-            className="bg-inherit rounded-l-xl px-4 shrink-0 inline-flex border-none items-center text-sm font-medium text-center rounded-none outline-none focus-visible:ring-0 hover:bg-white dark:hover:bg-black hover:bg-opacity-0 dark:hover:bg-opacity-20"
-          >
-            <span className="mr-1">{triggerTitle}</span>
-            <ChevronDown />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-accent">
-            {menuLabel ? (
-              <>
-                <DropdownMenuLabel>{menuLabel}</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-              </>
-            ) : null}
-            {menuItems.map((menuItem, key) => (
-              <DropdownMenuItem
-                key={key}
-                className="cursor-pointer hover:bg-primary focus:bg-primary"
-              >
-                {menuItem}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div id="dropdown-menu-container" className="hidden md:flex items-stretch">
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              data-dropdown-toggle="dropdown"
+              className="bg-inherit rounded-l-xl px-4 shrink-0 inline-flex border-none items-center text-sm font-medium text-center rounded-none outline-none focus-visible:ring-0 hover:bg-white dark:hover:bg-black hover:bg-opacity-0 dark:hover:bg-opacity-20"
+            >
+              <span className="mr-1">{triggerTitle}</span>
+              <ChevronDown />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-accent">
+              {menuLabel ? (
+                <>
+                  <DropdownMenuLabel>{menuLabel}</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                </>
+              ) : null}
+              {menuItems.map((menuItem, key) => (
+                <DropdownMenuItem
+                  key={key}
+                  className="cursor-pointer hover:bg-primary focus:bg-primary"
+                >
+                  {menuItem}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
         <Input
           type="search"
           placeholder="Search"
-          className="bg-inherit border-none rounded-none h-full px-4 font-medium border-transparent focus-visible:ring-0 hover:bg-black hover:bg-opacity-10"
+          className="rounded-l-xl md:rounded-l-none bg-inherit border-none h-full px-4 font-medium border-transparent focus-visible:ring-0 hover:bg-black hover:bg-opacity-10"
         />
         <Button
           variant="ghost"
