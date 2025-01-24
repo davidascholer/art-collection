@@ -6,6 +6,7 @@ import { useGetAPIListQuery } from "@/features/toolkit/api/services/apiSlice";
 import AppPagination from "@/ui/components/pagination/AppPagination";
 import { PAGINATION_SETTINGS } from "@/features/toolkit/api/lib/util";
 import { getFirstLastIndex } from "@/lib/utils";
+import { Skeleton } from "@/ui/components/skeleton/Skeleton";
 
 const Query: React.FC = () => {
   const { data, error, isLoading } = useGetAPIListQuery();
@@ -43,13 +44,15 @@ const Query: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-between w-full">
-      <div>{searchParams}</div>
       <div>
         {error ? (
           <p>Failed to retrieve information.</p>
         ) : isLoading ? (
-          // <ActivityIndicator animating={true} style={{ marginTop: 20 }} />
-          <div>loading</div>
+          <>
+            <Skeleton className="h-4 w-36 my-1" />
+            <Skeleton className="h-4 w-36 my-1" />
+            <Skeleton className="h-4 w-36 my-1" />
+          </>
         ) : data ? (
           Object.entries(paginatedDataState).map(([key, value]) => (
             <Button key={key} onClick={() => handleNavigateToDetailPage(value)}>

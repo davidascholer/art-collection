@@ -11,6 +11,7 @@ import { SidebarMenu } from "./components/SidebarMenu";
 import SidebarProvider from "./SidebarProvider";
 import SidebarTrigger from "./SidebarTrigger";
 import { SidebarContentType, SidebarType } from "./utils/types";
+import { AppToolbar } from "../toolbar/AppToolbar";
 
 export const AppSidebar = ({
   items,
@@ -18,13 +19,21 @@ export const AppSidebar = ({
   side = "left",
   variant = "sidebar",
   collapsible = "offcanvas",
+  className,
 }: {
   items: SidebarContentType[];
   children?: React.ReactNode;
+  variant?: SidebarType["variant"];
+  className?: string;
 } & SidebarType) => {
   return (
     <SidebarProvider>
-      <Sidebar side={side} variant={variant} collapsible={collapsible}>
+      <Sidebar
+        side={side}
+        variant={variant}
+        collapsible={collapsible}
+        className={className}
+      >
         <SidebarContent>
           <SidebarGroup>
             <SidebarGroupLabel>Application</SidebarGroupLabel>
@@ -45,10 +54,8 @@ export const AppSidebar = ({
           </SidebarGroup>
         </SidebarContent>
       </Sidebar>
-      <main className="w-full h-full">
-        <SidebarTrigger className="absolute" />
-        {children}
-      </main>
+      <AppToolbar sidbarTrigger={<SidebarTrigger />} />  
+      <main className="w-full h-full">{children}</main>
     </SidebarProvider>
   );
 };

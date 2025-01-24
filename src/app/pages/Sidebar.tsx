@@ -30,10 +30,11 @@ const items: SidebarContentType[] = [
 ];
 
 export default function Sidebar() {
-
   return (
-    <AppSidebar items={items}>
-      <Outlet />
-    </AppSidebar>
+    <>
+      <AppSidebar items={items} className="mt-14 border-none">
+        <Outlet />
+      </AppSidebar>
+    </>
   );
 }
