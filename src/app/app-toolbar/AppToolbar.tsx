@@ -19,7 +19,7 @@ export const AppToolbar = ({
     >
       <ToolbarGroup>{sidbarTrigger}</ToolbarGroup>
       <ToolbarGroup>
-        <ToolbarBadge count={0} href="/mail" iconSize={28} />
+        <ToolbarBadge count={0} href="/mail" iconSize={24} />
         <ToolbarAvatar
           imageSrc="https://github.com/shadcn.png"
           href="/account"

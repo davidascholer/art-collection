@@ -72,7 +72,7 @@ const ToolbarBadge = React.forwardRef<
 >(({ count = 0, iconSize = 36, className, ...props }) => (
   <ToolbarPrimitive.Link
     className={cn(
-      "relative flex items-center rounded-full outline-none focus:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex p-2 bg-none hover:bg-accent items-center rounded-full outline-none focus:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     {...props}
