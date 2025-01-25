@@ -77,7 +77,7 @@ const AppPagination: React.FC<AppPaginationProps> = ({
         {pages.map((page) => (
           <>
             {page === -1 ? (
-              <PaginationItem>
+              <PaginationItem key={page}>
                 <PaginationEllipsis />
               </PaginationItem>
             ) : (
