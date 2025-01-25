@@ -20,10 +20,7 @@ export const AppToolbar = ({
 }: AppToolbarProps) => {
   return (
     <Toolbar
-      className={cn(
-        "w-screen fixed flex justify-between px-4 py-2",
-        className
-      )}
+      className={cn("w-screen fixed flex justify-between px-4 py-2", className)}
     >
       <ToolbarGroup>{sidbarTrigger}</ToolbarGroup>
       <ToolbarGroup className="flex-1">
