@@ -12,11 +12,13 @@ import {
   DropdownMenuTrigger,
 } from "../dropdown-menu/DropdownMenu";
 import { cn } from "../../lib/utils";
+import { SearchFilterDropdown } from "../search-filter/SearchFilterDropdown";
 
 interface SearchbarProps {
   //   placeholder?: string;
   //   onSearch: (query: string) => void;
   menuItems: string[];
+  filterItems?: string[];
   className?: string;
   triggerTitle?: string;
   menuLabel?: string | null;
@@ -26,6 +28,7 @@ const Searchbar: React.FC<SearchbarProps> = ({
   //   placeholder = "Search...",
   //   onSearch,
   menuItems,
+  filterItems,
   className,
   triggerTitle = "All",
   menuLabel,
@@ -47,9 +50,12 @@ const Searchbar: React.FC<SearchbarProps> = ({
   //   };
 
   return (
-    <form className={cn("max-w-lg mx-auto", className)}>
-      <div className="flex h-10 items-stretch  bg-accent rounded-xl">
-        <div id="dropdown-menu-container" className="hidden md:flex items-stretch">
+    <form className={cn("flex-1 mx-auto justify-center flex gap-2", className)}>
+      <div className="flex h-10 items-stretch bg-accent rounded-xl max-w-lg w-full">
+        <div
+          id="dropdown-menu-container"
+          className="hidden md:flex items-stretch"
+        >
           <DropdownMenu>
             <DropdownMenuTrigger
               data-dropdown-toggle="dropdown"
@@ -79,7 +85,7 @@ const Searchbar: React.FC<SearchbarProps> = ({
         <Input
           type="search"
           placeholder="Search"
-          className="rounded-l-xl md:rounded-l-none bg-inherit border-none h-full px-4 font-medium border-transparent focus-visible:ring-0 hover:bg-black hover:bg-opacity-10"
+          className="rounded-l-xl md:rounded-l-none bg-inherit border-none h-full px-4 font-medium border-transparent focus-visible:ring-0 hover-highlight"
         />
         <Button
           variant="ghost"
@@ -88,6 +94,7 @@ const Searchbar: React.FC<SearchbarProps> = ({
           <Search />
         </Button>
       </div>
+      {filterItems ? <SearchFilterDropdown filterItems={filterItems} /> : null}
     </form>
   );
 };

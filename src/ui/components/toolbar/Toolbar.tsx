@@ -53,7 +53,7 @@ ToolbarButton.displayName = ToolbarPrimitive.Button.displayName;
 type ToolbarIconProps = {
   icon: React.ReactElement<SVGElement>;
   className: string;
-  href:string;
+  href: string;
 };
 const ToolbarIcon = ({ icon, className, href, ...props }: ToolbarIconProps) => (
   <ToolbarPrimitive.Link
@@ -70,10 +70,11 @@ const ToolbarIcon = ({ icon, className, href, ...props }: ToolbarIconProps) => (
 ToolbarIcon.displayName = ToolbarPrimitive.Link.displayName;
 
 type ToolbarBadgeProps = {
-  href:string;
+  href: string;
   count?: number;
   className?: string;
   iconSize?: number;
+  pingClassName?: string;
 };
 
 const ToolbarBadge = ({
@@ -99,10 +100,15 @@ ToolbarBadge.displayName = ToolbarPrimitive.Link.displayName;
 type ToolbarSearchbarProps = {
   menuItems: string[];
   className?: string;
+  filterItems?: string[];
 };
 
-const ToolbarSearchbar = ({ className, menuItems }: ToolbarSearchbarProps) => {
-  return <Searchbar className={className} menuItems={menuItems} />;
+const ToolbarSearchbar = ({
+  className,
+  menuItems,
+  filterItems,
+}: ToolbarSearchbarProps) => {
+  return <Searchbar className={className} menuItems={menuItems} filterItems={filterItems}/>;
 };
 
 type ToolbarAvatarProps = {

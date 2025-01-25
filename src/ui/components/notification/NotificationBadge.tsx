@@ -4,6 +4,7 @@ import React from "react";
 interface NotificationBadgeProps {
   count: number;
   iconSize: number;
+  className?: string;
 }
 
 export const NotificationBadge: React.FC<NotificationBadgeProps> = ({

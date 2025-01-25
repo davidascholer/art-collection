@@ -82,4 +82,9 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  @layer components {
+    .hover-highlight {
+      @apply hover:bg-black hover:bg-opacity-10 transition-all duration-100;
+    }
+  }
 }

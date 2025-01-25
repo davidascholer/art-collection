@@ -44,7 +44,9 @@ const items: SidebarContentType[] = [
   },
 ];
 
+
 const menuItems = ["one", "two", "three", "four", "five"];
+const filterItems = ["one", "two", "three", "four", "five"];
 
 export const AppSidebar = ({
   side = "left",
@@ -68,7 +70,7 @@ export const AppSidebar = ({
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild className="size-lg">
                       <a href={item.url}>
-                        {item.icon ? <item.icon /> : null}
+                        {item.icon ? <item.icon size="lg" /> : null}
                         <span>{item.title}</span>
                       </a>
                     </SidebarMenuButton>
@@ -82,6 +84,7 @@ export const AppSidebar = ({
       <AppToolbar
         sidbarTrigger={<SidebarTrigger className="mr-6" />}
         menuItems={menuItems}
+        filterItems={filterItems}
         className="h-16"
       />
       <main className="w-full overflow-hidden mt-16">
