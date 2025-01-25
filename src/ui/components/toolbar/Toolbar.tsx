@@ -67,7 +67,7 @@ const ToolbarIcon = ({ icon, className, href, ...props }: ToolbarIconProps) => (
     {icon}
   </ToolbarPrimitive.Link>
 );
-ToolbarIcon.displayName = "ToolbarIcon";
+ToolbarIcon.displayName = ToolbarPrimitive.Link.displayName;
 
 type ToolbarBadgeProps = {
   href:string;
@@ -94,7 +94,7 @@ const ToolbarBadge = ({
     <NotificationBadge count={count} iconSize={iconSize} />
   </ToolbarPrimitive.Link>
 );
-ToolbarBadge.displayName = "ToolbarBadge";
+ToolbarBadge.displayName = ToolbarPrimitive.Link.displayName;
 
 type ToolbarSearchbarProps = {
   menuItems: string[];
@@ -104,7 +104,6 @@ type ToolbarSearchbarProps = {
 const ToolbarSearchbar = ({ className, menuItems }: ToolbarSearchbarProps) => {
   return <Searchbar className={className} menuItems={menuItems} />;
 };
-ToolbarSearchbar.displayName = "ToolbarSearchbar";
 
 type ToolbarAvatarProps = {
   href: string;
@@ -134,7 +133,7 @@ const ToolbarAvatar = ({
     </Avatar>
   </ToolbarPrimitive.Link>
 );
-ToolbarAvatar.displayName = "ToolbarAvatar";
+ToolbarAvatar.displayName = ToolbarPrimitive.Link.displayName;
 
 type ToolbarGroupProps = {
   children: React.ReactNode;
@@ -151,7 +150,6 @@ const ToolbarGroup = ({ children, className }: ToolbarGroupProps) => (
     {children}
   </div>
 );
-ToolbarGroup.displayName = "ToolbarGroup";
 
 export {
   Toolbar,
